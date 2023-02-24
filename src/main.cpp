@@ -11,6 +11,9 @@
 #include <Arduino.h>
 #include "board.h"
 
+#ifndef __AVR_ATtinyX4__
+  #error Only ATTINYX4 boards supported!
+#endif
 
 float B1_V;
 float B2_V;
