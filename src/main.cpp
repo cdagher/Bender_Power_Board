@@ -36,7 +36,7 @@ void setup() {
   digitalWrite(BAT1, 0);
   digitalWrite(BAT2, 0);
   digitalWrite(BAT3, 0);
-  delay(10);
+  delay(RELAY_RELEASE_TIME);
 
   // set up voltage measurement pins and measure battery voltages
   pinMode(V_SENSE_B1_PIN, INPUT);
@@ -109,13 +109,13 @@ float measureBatteryVoltage(battery battery) {
 
 void engageBattery(battery battery) {
   digitalWrite(battery, 1);
-  delay(30);
+  delay(RELAY_OPERATE_TIME);
   analogWrite(battery, RELAY_DUTY_CYCLE);
 }
 
 void disengageBattery(battery battery) {
   digitalWrite(battery, 0);
-  delay(10);
+  delay(RELAY_RELEASE_TIME);
 }
 
 void switchBattery(battery old_batt, battery new_batt) {

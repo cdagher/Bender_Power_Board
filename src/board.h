@@ -14,6 +14,8 @@
 #define B2_ENABLE_PIN PIN_PB2  // pin to enable the relay for battery 2
 #define B3_ENABLE_PIN PIN_PA7  // pin to enable the relay for battery 3
 #define RELAY_DUTY_CYCLE 155   // duty cycle after relay has engaged
+#define RELAY_RELEASE_TIME 10  // maximum relay release time in ms
+#define RELAY_OPERATE_TIME 30  // maximum relay operate time in ms
 
 #define V_SENSE_B1_PIN PIN_PA3  // pin to sense the voltage of battery 1
 #define V_SENSE_B2_PIN PIN_PA2  // pin to sense the voltage of battery 2
