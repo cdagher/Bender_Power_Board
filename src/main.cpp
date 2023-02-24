@@ -39,6 +39,11 @@ void setup() {
   delay(RELAY_RELEASE_TIME);
 
   // set up voltage measurement pins and measure battery voltages
+  ADCSRA |= 0b00000000; // disable the ADC before power off
+  PRR |= 0b00000001;    // turn the ADC off
+  ADMUX |= 0b00000001;  // set ADC reference to external voltage on PA0
+  PRR |= 0b00000000;    // turn the ADC back on
+  ADCSRA |= 0b10000000; // re-enable the ADC after power on
   pinMode(V_SENSE_B1_PIN, INPUT);
   pinMode(V_SENSE_B2_PIN, INPUT);
   pinMode(V_SENSE_B3_PIN, INPUT);
